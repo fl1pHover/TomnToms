@@ -1,0 +1,415 @@
+@import 'var';
+@import 'flexCenter';
+@import 'leftPadding';
+@import 'skinHover';
+body {
+    font-family: 'Open sans', serif;
+    overflow-x: hidden;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    padding: 0 260px;
+    @include flexCenter(column);
+    text-align: center;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: url(img/nav-bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 300px;
+    height: 100vh;
+    padding: 30px 45px 10px;
+    text-align: center;
+    z-index: 999;
+    .nav__logo {
+        img {
+            width: 200px;
+        }
+    }
+    .nav__links {
+        @include flexCenter(column);
+        margin: 60px 0 50px 0;
+        font-family: 'Marcellus', serif;
+        ul {
+            @include flexCenter(column);
+            width: 100%;
+            li {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                a {
+                    text-transform: uppercase;
+                    padding: 5px 25px;
+                    position: relative;
+                    transition: 0.4s ease;
+                    line-height: 30px;
+                    width: 100%;
+                    @include skinHover($dark);
+                    i {
+                        font-size: 10px;
+                        margin: auto 0 auto 10px;
+                        position: absolute;
+                        top: 50%;
+                        right: 25%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+            }
+        }
+    }
+    .nav__icons {
+        margin: 30px 0;
+        a {
+            color: $skin;
+            margin: 0 5px;
+            transition: 0.3s ease;
+            opacity: 0.8;
+            &:hover {
+                color: $dark;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+#header {
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    transform-style: preserve-3d;
+    @include leftPadding();
+    padding-top: 0;
+    .swiper {
+        width: 100%;
+        height: 100%;
+        .swiper-wrapper {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            transform: translate3d(0px, 187.68px, 0px);
+            visibility: inherit;
+            opacity: 1;
+            .swiper-slide {
+                z-index: 2;
+                width: 100%;
+                height: 100%;
+                top: 0px;
+                left: 0px;
+                position: absolute;
+                transform: translate3d(0px, -59.2225px, 0px);
+                transform-origin: 0% 0% 0px;
+                img {
+                    position: absolute;
+                    height: 646px;
+                    width: 950px;
+                    transform: translate3d(0px, 0px, 0px) scale(1.1);
+                    transform-origin: 0% 0% 0px;
+                }
+            }
+            // // transform-style: preserve-3d;
+            // overflow-x: hidden;
+            // overflow-y: auto;
+            // .swiper-slide {
+            //     position: relative;
+            //     height: 100vh;
+            //     width: 100%;
+            //     padding-top: 20vh;
+            //     box-sizing: border-box;
+            //     transform-style: preserve-3d;
+            //     display: flex;
+            //     justify-content: center;
+            //     align-items: center;
+            // }
+            // .slide-1::before {
+            //     content: '';
+            //     position: absolute;
+            //     width: 100px;
+            //     height: 100px;
+            //     top: 50%;
+            //     left: 50%;
+            //     background: url(/img/home-1.jpg);
+            //     z-index: -1;
+            //     transform: translateZ(1px) scale(1.5);
+            //     background-attachment: fixed
+            // }
+        }
+    }
+}
+
+#about {
+    @include leftPadding();
+    .container {
+        .header {
+            padding-bottom: 90px;
+            img {
+                margin-bottom: 20px;
+            }
+            .main__header {
+                margin: 20px 0;
+            }
+            .big__p {}
+        }
+    }
+    .grid__box {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        .img-1 {
+            grid-column: 1 / 2;
+        }
+        .half-grid__box {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            .img-4 {
+                grid-column: 1 / 3;
+            }
+        }
+    }
+}
+
+#our__menu {
+    margin-bottom: 100px;
+    @include leftPadding();
+    .container {
+        .header {
+            padding-bottom: 90px;
+            img {
+                margin: 15px 0;
+            }
+        }
+    }
+    // Menunuud
+    .menu__box {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 80px;
+        grid-row-gap: 20px;
+        max-width: 90%;
+        margin: auto;
+        // 1 burchlen menunii songoltuud
+        .menu {
+            text-align: left;
+            @include flexCenter(row);
+            width: 100%;
+            img {
+                margin-right: 30px;
+            }
+            // Zuragnaas busad medeelel
+            .menu__content {
+                display: flex;
+                // coffee medeelel
+                .about__menu {
+                    .menu__header {
+                        display: flex;
+                        .small__header {
+                            white-space: nowrap;
+                            padding-bottom: 5px;
+                        }
+                        .under__dot {
+                            border-bottom: 1px dashed $dark;
+                            width: 100%;
+                            height: 22px;
+                        }
+                    }
+                }
+                // uniin sanal
+                .price {
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+}
+
+#hours {
+    @include leftPadding();
+    @include flexCenter(column);
+    .hours-grid__box {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        img {
+            width: 100%;
+        }
+        .image__info {
+            position: relative;
+            img {
+                position: absolute;
+            }
+            .info__content {
+                position: absolute;
+                @include flexCenter(column);
+                text-align: center;
+                width: 100%;
+                height: 100%;
+                h2 {
+                    margin-bottom: 10px;
+                }
+                p {
+                    margin-top: 15px;
+                    a {
+                        @include skinHover($dark);
+                        transition: 0.4s ease;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#offer {
+    @include leftPadding();
+    @include flexCenter(column);
+    margin-bottom: 100px;
+    .container {
+        .header {
+            @include flexCenter(column);
+            width: 100%;
+            img {
+                margin: 15px 0;
+            }
+            p {
+                margin: 10px 0;
+            }
+        }
+    }
+    .offer-grid__box {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 40px;
+        width: 80%;
+        margin-top: 40px;
+        .offers {
+            @include flexCenter(column);
+            text-align: center;
+            h2 {
+                margin: 15px 0;
+            }
+        }
+    }
+}
+
+#maps {
+    @include leftPadding();
+    padding-top: 0;
+    .map__container {
+        .map {
+            width: 100%;
+        }
+    }
+}
+
+#contact {
+    @include leftPadding();
+    padding-top: 0;
+    position: relative;
+    height: 340px;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .contact__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        .main__header {
+            @include skinHover($white);
+            font-size: 35px;
+        }
+        .email__panel {
+            margin-top: 30px;
+            display: flex;
+            height: 60px;
+            .emaiL__input {
+                width: 450px;
+                height: 100%;
+                padding: 0 23px;
+                font-size: 14px;
+                border: none;
+            }
+            .submit__btn {
+                position: relative;
+                width: 60px;
+                height: 100%;
+                background-color: $skin;
+                cursor: pointer;
+                @include flexCenter(row);
+                transition: 0.3s ease;
+                input {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    visibility: hidden;
+                    background: $dark;
+                }
+                i {
+                    font-size: 25px;
+                    transition: 0.3s ease;
+                    color: $dark;
+                }
+                &:hover {
+                    background-color: $dark;
+                    i {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    @include leftPadding();
+    background-color: #121212;
+    padding-top: 0;
+    .footer__content {
+        @include flexCenter(row);
+        justify-content: space-between;
+        padding: 55px 100px;
+        a {
+            @include skinHover($light);
+            font-family: 'Marcellus', serif;
+            text-transform: uppercase;
+        }
+        p {
+            color: $white;
+        }
+        .footer__links ul {
+            display: flex;
+            li {
+                padding: 0 20px;
+            }
+        }
+        .footer__icons {
+            a {
+                padding: 0 10px;
+            }
+        }
+    }
+}

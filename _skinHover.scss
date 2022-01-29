@@ -1,0 +1,7 @@
+@mixin skinHover($color) {
+    color: $color;
+    transition: 0.4s ease;
+    &:hover {
+        color: $skin;
+    }
+}
